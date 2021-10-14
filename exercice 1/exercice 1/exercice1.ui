@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>exercice1Class</class>
+ <widget class="QMainWindow" name="exercice1Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>611</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>exercice1</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="labelScore">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonLancerDe">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>70</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lancer le dé</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonAfficheScoreDe">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>110</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>afficher le score du dé</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonResetScore">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>270</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>reset mon score</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>score :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDe">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>100</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>historique:</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listhistorique">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>30</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>611</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menufichier">
+    <property name="title">
+     <string>fichier</string>
+    </property>
+   </widget>
+   <addaction name="menufichier"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="exercice1.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ButtonLancerDe</sender>
+   <signal>clicked()</signal>
+   <receiver>exercice1Class</receiver>
+   <slot>lanceDe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonAfficheScoreDe</sender>
+   <signal>clicked()</signal>
+   <receiver>exercice1Class</receiver>
+   <slot>afficheDe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonResetScore</sender>
+   <signal>clicked()</signal>
+   <receiver>exercice1Class</receiver>
+   <slot>resetScore()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>afficheScore()</slot>
+  <slot>afficheDe()</slot>
+  <slot>resetScore()</slot>
+  <slot>lanceDe()</slot>
+ </slots>
+</ui>
