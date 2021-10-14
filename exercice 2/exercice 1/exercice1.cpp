@@ -42,10 +42,18 @@ void exercice1::lanceDe() {
 
 void exercice1::Nlancer() {
 	ui.ButtonNlancer->setEnabled(false);
+	int NombreDeLancer;
+	resetScore();
 	QString N = ui.lineEditNlancer->text();
 	ui.lineEditNlancer->setText("");
 	DEHISTO->giveNombreDeLancer(N.toInt());
+	for (int i = 0; i < DEHISTO->getNombreDeLancer(); i++) {
 	DEHISTO->NLancer(DEHISTO->getNombreDeLancer());
+	QString result = QString::number(DEHISTO->getresult());
+	NombreDeLancer++;
+	QString nombre = QString::number(NombreDeLancer);
+	ui.listhistorique->addItem("lancer" + nombre+ "= " +result);
+	}
 	QString Qnb = QString::number(DE->getNbHistorique());
 	ui.ButtonNlancer->setEnabled(true);
 }
