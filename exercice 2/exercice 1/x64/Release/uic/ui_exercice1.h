@@ -45,6 +45,9 @@ public:
     QLabel *labelNombreLancer;
     QLineEdit *lineEditNlancer;
     QPushButton *ButtonNlancer;
+    QLabel *labelResultat;
+    QLabel *labelgif;
+    QLabel *labelDeGif;
     QMenuBar *menuBar;
     QMenu *menufichier;
     QMenu *menuchoisir;
@@ -55,10 +58,11 @@ public:
     {
         if (exercice1Class->objectName().isEmpty())
             exercice1Class->setObjectName(QString::fromUtf8("exercice1Class"));
-        exercice1Class->resize(611, 400);
+        exercice1Class->resize(660, 402);
         QFont font;
         font.setPointSize(8);
         exercice1Class->setFont(font);
+        exercice1Class->setStyleSheet(QString::fromUtf8(""));
         actionde = new QAction(exercice1Class);
         actionde->setObjectName(QString::fromUtf8("actionde"));
         actiondehisto = new QAction(exercice1Class);
@@ -67,6 +71,9 @@ public:
         actionquitte->setObjectName(QString::fromUtf8("actionquitte"));
         centralWidget = new QWidget(exercice1Class);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setStyleSheet(QString::fromUtf8("exercice1Class{\n"
+"	background-color: rgb(97, 121, 255);\n"
+"}"));
         labelScore = new QLabel(centralWidget);
         labelScore->setObjectName(QString::fromUtf8("labelScore"));
         labelScore->setGeometry(QRect(160, 230, 141, 31));
@@ -100,10 +107,10 @@ public:
         listhistorique->setGeometry(QRect(350, 30, 256, 192));
         labelmenuprincipal = new QLabel(centralWidget);
         labelmenuprincipal->setObjectName(QString::fromUtf8("labelmenuprincipal"));
-        labelmenuprincipal->setGeometry(QRect(200, 160, 141, 31));
+        labelmenuprincipal->setGeometry(QRect(10, 150, 141, 31));
         labelbienvenu = new QLabel(centralWidget);
         labelbienvenu->setObjectName(QString::fromUtf8("labelbienvenu"));
-        labelbienvenu->setGeometry(QRect(150, 140, 221, 21));
+        labelbienvenu->setGeometry(QRect(10, 130, 221, 21));
         labelNombreLancer = new QLabel(centralWidget);
         labelNombreLancer->setObjectName(QString::fromUtf8("labelNombreLancer"));
         labelNombreLancer->setGeometry(QRect(10, 160, 91, 16));
@@ -113,10 +120,26 @@ public:
         ButtonNlancer = new QPushButton(centralWidget);
         ButtonNlancer->setObjectName(QString::fromUtf8("ButtonNlancer"));
         ButtonNlancer->setGeometry(QRect(160, 160, 111, 23));
+        labelResultat = new QLabel(centralWidget);
+        labelResultat->setObjectName(QString::fromUtf8("labelResultat"));
+        labelResultat->setGeometry(QRect(450, 0, 71, 21));
+        QFont font3;
+        font3.setPointSize(12);
+        font3.setBold(true);
+        font3.setWeight(75);
+        labelResultat->setFont(font3);
+        labelResultat->setStyleSheet(QString::fromUtf8("color:rgb(255, 0, 0)\n"
+""));
+        labelgif = new QLabel(centralWidget);
+        labelgif->setObjectName(QString::fromUtf8("labelgif"));
+        labelgif->setGeometry(QRect(280, 90, 331, 221));
+        labelDeGif = new QLabel(centralWidget);
+        labelDeGif->setObjectName(QString::fromUtf8("labelDeGif"));
+        labelDeGif->setGeometry(QRect(50, 200, 231, 141));
         exercice1Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(exercice1Class);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 611, 21));
+        menuBar->setGeometry(QRect(0, 0, 660, 21));
         menufichier = new QMenu(menuBar);
         menufichier->setObjectName(QString::fromUtf8("menufichier"));
         menuchoisir = new QMenu(menuBar);
@@ -163,6 +186,9 @@ public:
         labelbienvenu->setText(QCoreApplication::translate("exercice1Class", "bienvenu sur le symulateur de lanceur de De !! ", nullptr));
         labelNombreLancer->setText(QCoreApplication::translate("exercice1Class", "Nombre de lancer :", nullptr));
         ButtonNlancer->setText(QCoreApplication::translate("exercice1Class", "lance le simulateur", nullptr));
+        labelResultat->setText(QCoreApplication::translate("exercice1Class", "R\303\251sultat", nullptr));
+        labelgif->setText(QString());
+        labelDeGif->setText(QString());
         menufichier->setTitle(QCoreApplication::translate("exercice1Class", "fichier", nullptr));
         menuchoisir->setTitle(QCoreApplication::translate("exercice1Class", "choisir", nullptr));
     } // retranslateUi

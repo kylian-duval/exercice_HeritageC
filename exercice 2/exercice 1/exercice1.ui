@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>611</width>
-    <height>400</height>
+    <width>660</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="font">
@@ -18,7 +18,15 @@
   <property name="windowTitle">
    <string>exercice1</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">exercice1Class{
+	background-color: rgb(97, 121, 255);
+}</string>
+   </property>
    <widget class="QLabel" name="labelScore">
     <property name="geometry">
      <rect>
@@ -138,8 +146,8 @@
    <widget class="QLabel" name="labelmenuprincipal">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>160</y>
+      <x>10</x>
+      <y>150</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -151,8 +159,8 @@
    <widget class="QLabel" name="labelbienvenu">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>140</y>
+      <x>10</x>
+      <y>130</y>
       <width>221</width>
       <height>21</height>
      </rect>
@@ -197,13 +205,63 @@
      <string>lance le simulateur</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labelResultat">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>0</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string>Résultat</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelgif">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>90</y>
+      <width>331</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDeGif">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>200</y>
+      <width>231</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>611</width>
+     <width>660</width>
      <height>21</height>
     </rect>
    </property>

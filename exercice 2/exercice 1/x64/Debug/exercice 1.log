@@ -1,3 +1,3 @@
 ﻿  exercice1.cpp
-c:\users\duval kylian\desktop\c++\exo\chapitre 2 héritage\exercice_heritagec\exercice 2\exercice 1\exercice1.cpp(53): warning C4700: variable locale 'NombreDeLancer' non initialisée utilisée
+c:\users\duval kylian\desktop\c++\exo\chapitre 2 héritage\exercice_heritagec\exercice 2\exercice 1\exercice1.cpp(61): warning C4700: variable locale 'NombreDeLancer' non initialisée utilisée
   exercice 1.vcxproj -> C:\Users\duval kylian\Desktop\C++\exo\chapitre 2 héritage\exercice_HeritageC\exercice 2\x64\Debug\exercice 1.exe

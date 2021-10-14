@@ -1,9 +1,14 @@
 #include "exercice1.h"
 
+
+
 exercice1::exercice1(QWidget *parent) : QMainWindow(parent)
 {
-    ui.setupUi(this);
+	ui.setupUi(this);
+	setWindowIcon(QIcon("image/de.png"));
 	MenuPrincipal();
+
+	
 }
  
 void exercice1::afficheScore() {
@@ -41,21 +46,27 @@ void exercice1::lanceDe() {
 }
 
 void exercice1::Nlancer() {
+	ui.labelDeGif->setVisible(true);
 	ui.ButtonNlancer->setEnabled(false);
 	int NombreDeLancer;
 	resetScore();
 	QString N = ui.lineEditNlancer->text();
 	ui.lineEditNlancer->setText("");
 	DEHISTO->giveNombreDeLancer(N.toInt());
-	for (int i = 0; i < DEHISTO->getNombreDeLancer(); i++) {
-	DEHISTO->NLancer(DEHISTO->getNombreDeLancer());
-	QString result = QString::number(DEHISTO->getresult());
-	NombreDeLancer++;
-	QString nombre = QString::number(NombreDeLancer);
-	ui.listhistorique->addItem("lancer" + nombre+ "= " +result);
+
+	for (int i = 0; i < DEHISTO->getNombreDeLancer(); i++) 
+	{
+		DEHISTO->jet(DEHISTO->getNombreDeLancer());
+		QString result = QString::number(DEHISTO->getresult());
+		NombreDeLancer++;
+		QString nombre = QString::number(NombreDeLancer);
+		ui.listhistorique->addItem("lancer" + nombre+ "= " +result);
+		
 	}
-	QString Qnb = QString::number(DE->getNbHistorique());
+
+	QThread::msleep(999);
 	ui.ButtonNlancer->setEnabled(true);
+	ui.labelDeGif->setVisible(false);
 }
 
 void exercice1::AffichedeNormal() {
@@ -74,6 +85,9 @@ void exercice1::AffichedeNormal() {
 	ui.ButtonNlancer->setVisible(false);
 	ui.lineEditNlancer->setVisible(false);
 	ui.labelNombreLancer->setVisible(false);
+	ui.labelResultat->setVisible(false);
+	ui.labelgif->setVisible(false);
+	ui.labelDeGif->setVisible(false);
 	
 }
 
@@ -91,6 +105,14 @@ void exercice1::AfficheDeHisto() {
 	ui.ButtonNlancer->setVisible(true);
 	ui.lineEditNlancer->setVisible(true);
 	ui.labelNombreLancer->setVisible(true);
+	ui.labelResultat->setVisible(true);
+	ui.labelgif->setVisible(false);
+	ui.labelDeGif->setVisible(false);
+
+	movie2->setFileName("image/dedeux.gif");
+	ui.labelDeGif->setMovie(movie2);
+	movie2->start();
+	//ui.labelDeGif->show();
 
 }
 
@@ -106,5 +128,11 @@ void exercice1::MenuPrincipal() {
 	ui.ButtonNlancer->setVisible(false);
 	ui.lineEditNlancer->setVisible(false);
 	ui.labelNombreLancer->setVisible(false);
+	ui.labelResultat->setVisible(false);
+	ui.labelDeGif->setVisible(false);
+	movie->setFileName("image/de.gif");
+	ui.labelgif->setMovie(movie);
+	movie->start();
+	ui.labelgif->show();
 }
 
