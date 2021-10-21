@@ -407,6 +407,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionquitte</sender>
+   <signal>triggered()</signal>
+   <receiver>exercice1Class</receiver>
+   <slot>exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>afficheScore()</slot>
@@ -416,5 +432,6 @@
   <slot>AffichedeNormal()</slot>
   <slot>AfficheDeHisto()</slot>
   <slot>Nlancer()</slot>
+  <slot>exit()</slot>
  </slots>
 </ui>

@@ -1,11 +1,13 @@
 #pragma once
-
 #include <QtWidgets/QMainWindow>
+#include <QApplication>
 #include "ui_exercice1.h"
 #include "dé.h"
 #include "dehisto.h"
 #include <QMovie>
 #include <QThread>
+#include <QFont>
+
 
 
 class exercice1 : public QMainWindow
@@ -32,4 +34,5 @@ public slots:
 	void AffichedeNormal();
 	void AfficheDeHisto();
 	void Nlancer();
+	void exit();
 };

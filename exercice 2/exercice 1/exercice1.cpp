@@ -2,20 +2,21 @@
 
 
 
+
 exercice1::exercice1(QWidget *parent) : QMainWindow(parent)
 {
 	ui.setupUi(this);
 	setWindowIcon(QIcon("image/de.png"));
 	MenuPrincipal();
-
-	
+	movie2->setFileName("image/dedeux.gif");
+	ui.labelDeGif->setMovie(movie2);
 }
  
 void exercice1::afficheScore() {
 	QString score = QString::number(DE->getScore());
 	ui.labelScore->setText(score);
-	
 }
+
 void exercice1::afficheDe() {
 	int scoreInt;
 	scoreInt = DE->getDé();
@@ -46,7 +47,7 @@ void exercice1::lanceDe() {
 }
 
 void exercice1::Nlancer() {
-	ui.labelDeGif->setVisible(true);
+	//ui.labelDeGif->setVisible(true);
 	ui.ButtonNlancer->setEnabled(false);
 	int NombreDeLancer;
 	resetScore();
@@ -61,14 +62,27 @@ void exercice1::Nlancer() {
 		NombreDeLancer++;
 		QString nombre = QString::number(NombreDeLancer);
 		ui.listhistorique->addItem("lancer" + nombre+ "= " +result);
-		
 	}
 
-	QThread::msleep(999);
+	
+	//QThread::msleep(999);
 	ui.ButtonNlancer->setEnabled(true);
-	ui.labelDeGif->setVisible(false);
+	//ui.labelDeGif->setVisible(false);
 }
 
+void exercice1::exit() {
+	qApp->exit();
+}
+
+//---------------------------------------------GESTION DES MENU ----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+//------------------------------------------GESTION MENU SIMULATION LANCER --------------------------------------------------------------------------------------------
 void exercice1::AffichedeNormal() {
 	ui.labelScore->setVisible(true);
 	ui.labelDe->setVisible(true);
@@ -91,6 +105,7 @@ void exercice1::AffichedeNormal() {
 	
 }
 
+//----------------------------------------------GESTION MENU SIMULATION N LANCER-------------------------------------------------------------------------------------------
 void exercice1::AfficheDeHisto() {
 	ui.labelScore->setVisible(false);
 	ui.labelDe->setVisible(false);
@@ -107,15 +122,11 @@ void exercice1::AfficheDeHisto() {
 	ui.labelNombreLancer->setVisible(true);
 	ui.labelResultat->setVisible(true);
 	ui.labelgif->setVisible(false);
-	ui.labelDeGif->setVisible(false);
-
-	movie2->setFileName("image/dedeux.gif");
-	ui.labelDeGif->setMovie(movie2);
 	movie2->start();
-	//ui.labelDeGif->show();
-
+	ui.labelDeGif->show();
 }
 
+//---------------------------------------------GESTION MENU PRINCIPAL------------------------------------------------------------------
 void exercice1::MenuPrincipal() {
 	ui.labelScore->setVisible(false);
 	ui.labelDe->setVisible(false);
@@ -133,6 +144,7 @@ void exercice1::MenuPrincipal() {
 	movie->setFileName("image/de.gif");
 	ui.labelgif->setMovie(movie);
 	movie->start();
+	movie->setSpeed(1000);
 	ui.labelgif->show();
 }
 

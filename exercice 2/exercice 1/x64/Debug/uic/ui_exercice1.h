@@ -165,6 +165,7 @@ public:
         QObject::connect(actionde, SIGNAL(triggered()), exercice1Class, SLOT(AffichedeNormal()));
         QObject::connect(actiondehisto, SIGNAL(triggered()), exercice1Class, SLOT(AfficheDeHisto()));
         QObject::connect(ButtonNlancer, SIGNAL(clicked()), exercice1Class, SLOT(Nlancer()));
+        QObject::connect(actionquitte, SIGNAL(triggered()), exercice1Class, SLOT(exit()));
 
         QMetaObject::connectSlotsByName(exercice1Class);
     } // setupUi
