@@ -314,7 +314,7 @@
   </action>
   <action name="actionquitte">
    <property name="text">
-    <string>quitte</string>
+    <string>Quitter</string>
    </property>
   </action>
  </widget>

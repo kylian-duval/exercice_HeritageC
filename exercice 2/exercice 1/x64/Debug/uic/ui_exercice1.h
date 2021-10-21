@@ -180,7 +180,7 @@ public:
         exercice1Class->setWindowTitle(QCoreApplication::translate("exercice1Class", "exercice1", nullptr));
         actionde->setText(QCoreApplication::translate("exercice1Class", "de", nullptr));
         actiondehisto->setText(QCoreApplication::translate("exercice1Class", "dehisto", nullptr));
-        actionquitte->setText(QCoreApplication::translate("exercice1Class", "quitte", nullptr));
+        actionquitte->setText(QCoreApplication::translate("exercice1Class", "Quitter", nullptr));
         labelScore->setText(QString());
         ButtonLancerDe->setText(QCoreApplication::translate("exercice1Class", "lancer le d\303\251", nullptr));
         ButtonResetScore->setText(QCoreApplication::translate("exercice1Class", "reset mon score", nullptr));
