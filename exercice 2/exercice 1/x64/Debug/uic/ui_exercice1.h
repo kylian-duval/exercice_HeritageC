@@ -34,7 +34,6 @@ public:
     QWidget *centralWidget;
     QLabel *labelScore;
     QPushButton *ButtonLancerDe;
-    QPushButton *ButtonAfficheScoreDe;
     QPushButton *ButtonResetScore;
     QLabel *label;
     QLabel *labelDe;
@@ -48,6 +47,7 @@ public:
     QLabel *labelResultat;
     QLabel *labelgif;
     QLabel *labelDeGif;
+    QLabel *labelError;
     QMenuBar *menuBar;
     QMenu *menufichier;
     QMenu *menuchoisir;
@@ -58,7 +58,8 @@ public:
     {
         if (exercice1Class->objectName().isEmpty())
             exercice1Class->setObjectName(QString::fromUtf8("exercice1Class"));
-        exercice1Class->resize(660, 402);
+        exercice1Class->setEnabled(true);
+        exercice1Class->resize(646, 362);
         QFont font;
         font.setPointSize(8);
         exercice1Class->setFont(font);
@@ -83,9 +84,6 @@ public:
         ButtonLancerDe = new QPushButton(centralWidget);
         ButtonLancerDe->setObjectName(QString::fromUtf8("ButtonLancerDe"));
         ButtonLancerDe->setGeometry(QRect(110, 70, 75, 23));
-        ButtonAfficheScoreDe = new QPushButton(centralWidget);
-        ButtonAfficheScoreDe->setObjectName(QString::fromUtf8("ButtonAfficheScoreDe"));
-        ButtonAfficheScoreDe->setGeometry(QRect(100, 110, 121, 23));
         ButtonResetScore = new QPushButton(centralWidget);
         ButtonResetScore->setObjectName(QString::fromUtf8("ButtonResetScore"));
         ButtonResetScore->setGeometry(QRect(150, 270, 101, 23));
@@ -136,10 +134,18 @@ public:
         labelDeGif = new QLabel(centralWidget);
         labelDeGif->setObjectName(QString::fromUtf8("labelDeGif"));
         labelDeGif->setGeometry(QRect(50, 200, 231, 141));
+        labelError = new QLabel(centralWidget);
+        labelError->setObjectName(QString::fromUtf8("labelError"));
+        labelError->setGeometry(QRect(30, 140, 291, 20));
+        QFont font4;
+        font4.setBold(true);
+        font4.setWeight(75);
+        labelError->setFont(font4);
+        labelError->setStyleSheet(QString::fromUtf8("color:rgb(255, 0, 0)"));
         exercice1Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(exercice1Class);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 660, 21));
+        menuBar->setGeometry(QRect(0, 0, 646, 21));
         menufichier = new QMenu(menuBar);
         menufichier->setObjectName(QString::fromUtf8("menufichier"));
         menuchoisir = new QMenu(menuBar);
@@ -160,7 +166,6 @@ public:
 
         retranslateUi(exercice1Class);
         QObject::connect(ButtonLancerDe, SIGNAL(clicked()), exercice1Class, SLOT(lanceDe()));
-        QObject::connect(ButtonAfficheScoreDe, SIGNAL(clicked()), exercice1Class, SLOT(afficheDe()));
         QObject::connect(ButtonResetScore, SIGNAL(clicked()), exercice1Class, SLOT(resetScore()));
         QObject::connect(actionde, SIGNAL(triggered()), exercice1Class, SLOT(AffichedeNormal()));
         QObject::connect(actiondehisto, SIGNAL(triggered()), exercice1Class, SLOT(AfficheDeHisto()));
@@ -178,7 +183,6 @@ public:
         actionquitte->setText(QCoreApplication::translate("exercice1Class", "quitte", nullptr));
         labelScore->setText(QString());
         ButtonLancerDe->setText(QCoreApplication::translate("exercice1Class", "lancer le d\303\251", nullptr));
-        ButtonAfficheScoreDe->setText(QCoreApplication::translate("exercice1Class", "afficher le score du d\303\251", nullptr));
         ButtonResetScore->setText(QCoreApplication::translate("exercice1Class", "reset mon score", nullptr));
         label->setText(QCoreApplication::translate("exercice1Class", "score :", nullptr));
         labelDe->setText(QString());
@@ -190,6 +194,7 @@ public:
         labelResultat->setText(QCoreApplication::translate("exercice1Class", "R\303\251sultat", nullptr));
         labelgif->setText(QString());
         labelDeGif->setText(QString());
+        labelError->setText(QString());
         menufichier->setTitle(QCoreApplication::translate("exercice1Class", "fichier", nullptr));
         menuchoisir->setTitle(QCoreApplication::translate("exercice1Class", "choisir", nullptr));
     } // retranslateUi

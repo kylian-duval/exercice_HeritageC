@@ -10,6 +10,7 @@ private:
 public:
 	void ajoutauscore();
 	void resetScore();
+	void resetnombreHistorique();
 	void de();
 	int getDé();
 	int getScore();

@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>exercice1Class</class>
  <widget class="QMainWindow" name="exercice1Class">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>402</height>
+    <width>646</width>
+    <height>362</height>
    </rect>
   </property>
   <property name="font">
@@ -56,19 +59,6 @@
     </property>
     <property name="text">
      <string>lancer le dé</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ButtonAfficheScoreDe">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>110</y>
-      <width>121</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>afficher le score du dé</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ButtonResetScore">
@@ -255,13 +245,35 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="labelError">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>140</y>
+      <width>291</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>660</width>
+     <width>646</width>
      <height>21</height>
     </rect>
    </property>
@@ -320,22 +332,6 @@
     <hint type="sourcelabel">
      <x>147</x>
      <y>112</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>305</x>
-     <y>199</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ButtonAfficheScoreDe</sender>
-   <signal>clicked()</signal>
-   <receiver>exercice1Class</receiver>
-   <slot>afficheDe()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>160</x>
-     <y>152</y>
     </hint>
     <hint type="destinationlabel">
      <x>305</x>

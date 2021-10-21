@@ -32,6 +32,11 @@ void dé::nombreHistorique() {
 	NbHistorique++;
 }
 
+void dé::resetnombreHistorique(){
+	this->NbHistorique = 1;
+}
+
 int dé::getNbHistorique() {
 	return NbHistorique;
 }
+
